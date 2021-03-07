@@ -1,3 +1,3 @@
 # DnD_Dating
-this is a dnd themed dating sim
+this is a dnd app
 whoop whoop
