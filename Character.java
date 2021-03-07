@@ -2,11 +2,9 @@ public class Character {
 
     // PHB Races
     private static Races Human = new Races("Human", new int[] { 1, 1, 1, 1, 1, 1 }, 30, false, "medium",
-            new String[] { "Common", "x" });
+            new String[] { "Common", "French" });
     private static Races Elf = new Races("Elf", new int[] { 2, 0, 0, 0, 0, 0 }, 30, true, "medium",
             new String[] { "Common", "Elvish" });
-    private static Races HalfElf = new Races("Half-Elf", new int[] { 0, 0, 0, 0, 0, 2 }, 30, true, "medium",
-            new String[] { "Common", "Elvish", "x" });
     private static Races HalfOrc = new Races("Half-Orc", new int[] { 0, 2, 1, 0, 0, 0 }, 30, true, "medium",
             new String[] { "Common", "Orcish" });
     private static Races Halfling = new Races("Halfling", new int[] { 2, 0, 0, 0, 0, 0 }, 25, false, "small",
@@ -15,7 +13,7 @@ public class Character {
             new String[] { "Common", "Gnomish" });
     private static Races Dwarf = new Races("Dwarf", new int[] { 0, 0, 2, 0, 0, 0 }, 25, true, "medium",
             new String[] { "Common", "Dwarvish" });
-    private static Races Tiefling private static = new Races("Tiefling", new int[] { 0, 0, 0, 1, 0, 2 }, 30, true, "medium",
+    private static Races Tiefling = new Races("Tiefling", new int[] { 0, 0, 0, 1, 0, 2 }, 30, true, "medium",
             new String[] { "Common", "Infernal" });
     // PHB CLasses
 
