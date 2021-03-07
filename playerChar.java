@@ -1,7 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class playerChar extends Character{
 
-    //String[] race = {"Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"};
-    //String[] classes = {Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard};
     private String playName;
     private Races playRace;
     private Classes playClass;
@@ -14,6 +15,9 @@ public class playerChar extends Character{
     private int intel;
     private int wis;
     private int cha;
+    
+    private ArrayList<String> skills;
+    private boolean[] skillProfs;
 
 	public playerChar(String playName, Races playRace, Classes playClass, int[] generatedStats, int profBonus) {
 		this.playName = playName;
@@ -21,6 +25,10 @@ public class playerChar extends Character{
 		this.playClass = playClass;
 		this.generatedStats = generatedStats;
 		this.profBonus = profBonus;
+		String allSkills[] = new String[] {"athletics","acrobatics","sleightOfHand","stealth","arcana","history","investigation", "nature",
+				"religion","animalHandling","insight","medicine","perception","survival","deception","intimidation","performance","persuasion"};
+		skills = new ArrayList<String>(Arrays.asList(allSkills));
+		skillProfs = new boolean[18];
 	}
 	
 	public playerChar(String playName, Races playRace, Classes playClass, int profBonus, int dex, int str, int con,
@@ -35,6 +43,10 @@ public class playerChar extends Character{
 		this.intel = intel;
 		this.wis = wis;
 		this.cha = cha;
+		String[] allSkills = new String[] {"athletics","acrobatics","sleightOfHand","stealth","arcana","history","investigation", "nature",
+				"religion","animalHandling","insight","medicine","perception","survival","deception","intimidation","performance","persuasion"};
+		skills = new ArrayList<String>(Arrays.asList(allSkills));
+		skillProfs = new boolean[18];
 	}
 
 	public Classes getPlayClass() {
@@ -134,14 +146,15 @@ public class playerChar extends Character{
 		
     }
 
-    public void assignStats(String stat, int index){
-    	switch(stat) {
-    		case "Strength": str = generatedStats[index]; 
-    		case "Dexterity": dex = generatedStats[index]; 
-    		case "Constitution": con = generatedStats[index]; 
-    		case "Intelligence": intel = generatedStats[index]; 
-    		case "Wisdom": wis = generatedStats[index]; 
-    		case "Charisma": cha = generatedStats[index]; 
+    public void assignAllStats(int[] allStats){
+    	setStr(allStats[1]);
+    }
+    
+    public void setSkillProf(String skill, boolean prof) {
+    	for(String s : skills) {
+    		if(s.equalsIgnoreCase(skill)) skillProfs[skills.indexOf(skill)] =  prof;
     	}
     }
+    
+    
 }
