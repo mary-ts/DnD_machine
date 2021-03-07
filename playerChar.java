@@ -1,11 +1,9 @@
-import java.util.Scanner;
-
 public class playerChar extends Character{
 
     //String[] race = {"Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Human", "Tiefling"};
     //String[] classes = {Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard};
     private String playName;
-    private String playRace;
+    private Races playRace;
     private Classes playClass;
     private int[] generatedStats;
 
@@ -17,17 +15,19 @@ public class playerChar extends Character{
     private int wis;
     private int cha;
 
-    public playerChar(String playName, String playRace, int[] generatedStats, int profBonus) {
+	public playerChar(String playName, Races playRace, Classes playClass, int[] generatedStats, int profBonus) {
 		this.playName = playName;
 		this.playRace = playRace;
+		this.playClass = playClass;
 		this.generatedStats = generatedStats;
 		this.profBonus = profBonus;
 	}
-    
-	public playerChar(String playName, String playRace, int profBonus, int dex, int str, int con, int intel, int wis,
-			int cha) {
+	
+	public playerChar(String playName, Races playRace, Classes playClass, int profBonus, int dex, int str, int con,
+			int intel, int wis, int cha) {
 		this.playName = playName;
 		this.playRace = playRace;
+		this.playClass = playClass;
 		this.profBonus = profBonus;
 		this.dex = dex;
 		this.str = str;
@@ -37,7 +37,13 @@ public class playerChar extends Character{
 		this.cha = cha;
 	}
 
+	public Classes getPlayClass() {
+		return playClass;
+	}
 
+	public void setPlayClass(Classes playClass) {
+		this.playClass = playClass;
+	}
 
 	public String getPlayName() {
 		return playName;
@@ -47,11 +53,11 @@ public class playerChar extends Character{
 		this.playName = playName;
 	}
 
-	public String getPlayRace() {
+	public Races getPlayRace() {
 		return playRace;
 	}
 
-	public void setPlayRace(String playRace) {
+	public void setPlayRace(Races playRace) {
 		this.playRace = playRace;
 	}
 
@@ -120,7 +126,7 @@ public class playerChar extends Character{
 	}
 
 	public void genStats() {
-    	generatedStats = new int[] {rollDice.sum3(),rollDice.sum3(),rollDice.sum3(),rollDice.sum3(),rollDice.sum3(),rollDice.sum3()};
+    	generatedStats = new int[] {rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6()};
 		System.out.println("Generated: ");
         for(int i = 0; i < generatedStats.length; i ++) {			
 			System.out.println("[" + i + "] " + generatedStats[i]);
