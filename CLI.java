@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class CLI {
     private Scanner scan;
     private boolean more;
@@ -5,8 +7,8 @@ public class CLI {
     private String playName;
     private Races playRace;
     private Classes playClass;
-    private int[] generatedStats;
     private int profBonus;
+    private int[] abilityScores;
 
     public CLI() {
         more = true;
@@ -24,8 +26,8 @@ public class CLI {
                 playName = scan.nextLine();
 
                 System.out.println("Choose a Race");
-                System.out.println("1. Human    2. Half-Orc     3. Elf");
-                System.out.println("4. Halfling 5. Gnome        6. Dwarf");
+                System.out.println("1. Human    2. Half-Orc     3. Elf   4. Halfling");
+                System.out.println("5. Gnome    6. Dwarf        7. Tiefling");
                 int race = scan.nextInt();
                 switch(race) {
                     case 1: 
@@ -46,6 +48,8 @@ public class CLI {
                     case 6:
                         playRace = Character.Dwarf;
                         break;
+                    case 7:
+                        playRace = Character.Tiefling;
                 }
                 System.out.println("Choose a Class");
                 System.out.println("1. Barbarian      2. Bard       3. Cleric     4. Druid");
@@ -90,6 +94,32 @@ public class CLI {
                         playClass = Character.Wizard;
                         break;
                 }
+                System.out.println("G)enerate random stats  or  S)elect your own");
+                String stats = scan.nextLine().toUpperCase();
+                
+                switch(stats) {
+                    case "G":
+                        playerChar newChar = new playerChar(playName, playRace, playClass, 2);
+                        break;
+                    case "S":
+                        abilityScores = new int[6];
+                        System.out.println("Dexterity: ");
+                        abilityScores[0] = scan.nextInt();
+                        System.out.println("Strength: ");
+                        abilityScores[1] = scan.nextInt();
+                        System.out.println("Constitution: ");
+                        abilityScores[2] = scan.nextInt();
+                        System.out.println("Inteligence: ");
+                        abilityScores[3] = scan.nextInt();
+                        System.out.println("Wisdom: ");
+                        abilityScores[4] = scan.nextInt();
+                        System.out.println("Charisma: ");
+                        abilityScores[5] = scan.nextInt();
+                        playerChar newChar = new playerChar(playName, playRace, playClass, 2,abilityScores);
+                        break;
+                }
+
+                newChar.display();              
 
             }
         }
