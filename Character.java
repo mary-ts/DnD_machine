@@ -1,10 +1,12 @@
-import java.util.*;
 public class Character {
 	
-	private static String[] abilitiesArr = {"dex","str","con","int","wis","cha"};
+	private String[] abilitiesArr = {"Dexterity","Strngth","Constitution","Intelligence","Wisdom","Charisma"};
 	private int[] abilityScores = new int[6];
-	public static final ArrayList<String> abilities = new ArrayList<String>(Arrays.asList(abilitiesArr));
-	
+
+	public String[] getAbilitiesArr() {
+		return abilitiesArr;
+	}
+
 	public int[] getAbilityScores() {
 		return abilityScores;
 	}

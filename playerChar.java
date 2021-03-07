@@ -84,8 +84,11 @@ public class playerChar extends Character{
     	}
     }
     
-//    public void displayCharacter() {
-//    	String out = "Name: " + playName + 
-//    }
+    public void displayCharacter() {
+    	System.out.println("Name: " + playName + "\n" + playRace + "\n" + playClass + "\n");
+    	for(int i = 0; i < getAbilityScores().length; i++) {
+    		System.out.println(getAbilitiesArr()[i]+ " - " +getAbilityScores()[i]);
+    	}
+    }
     
 }
