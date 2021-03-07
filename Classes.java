@@ -20,7 +20,15 @@ public class Classes {
         this.spellslots = spellslots;
     }
     
-    public String getType() {
+	public String toString() {
+		String out = "Classes: " + type + "\nHit Dice: d" + hitDice + "\nProficiencies\nSaving Throws: " + savingThrows + "\nSkill Proficiencies: "
+				+ proficiencies + "\nArmour: " + armorProf;
+		if(numSells > 0) out += "\nNumber of Spells" + numSells + "\nCantrips: " + cantrips
+			+ "\nSpellslots: " + spellslots;
+		return out;
+	}
+
+	public String getType() {
 		return type;
 	}
 

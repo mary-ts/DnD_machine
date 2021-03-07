@@ -6,17 +6,15 @@ public class playerChar extends Character{
     private String playName;
     private Races playRace;
     private Classes playClass;
-    private int[] generatedStats;
     private int profBonus;
     private ArrayList<String> skills;
     private boolean[] skillProfs;
 
-	public playerChar(String playName, Races playRace, Classes playClass, int[] generatedStats, int profBonus) {
+	public playerChar(String playName, Races playRace, Classes playClass, int profBonus) {
 		this.playName = playName;
 		this.playRace = playRace;
 		this.playClass = playClass;
 		genStats();
-		setAbilityScores(generatedStats);
 		this.profBonus = profBonus;
 		String allSkills[] = new String[] {"athletics","acrobatics","sleightOfHand","stealth","arcana","history","investigation", "nature",
 				"religion","animalHandling","insight","medicine","perception","survival","deception","intimidation","performance","persuasion"};
@@ -77,12 +75,7 @@ public class playerChar extends Character{
 	}
 
 	public void genStats() {
-    	generatedStats = new int[] {rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6()};
-		System.out.println("Generated: ");
-        for(int i = 0; i < generatedStats.length; i ++) {			
-			System.out.println("[" + i + "] " + generatedStats[i]);
-		}
-		
+    	Character.setAbilityScores(new int[] {rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6()});
     }
     
     public void setSkillProf(String skill, boolean prof) {
@@ -91,8 +84,8 @@ public class playerChar extends Character{
     	}
     }
     
-//    public String toString() {
-//    	String out = playName + "";
+//    public void displayCharacter() {
+//    	String out = "Name: " + playName + 
 //    }
-//    
+    
 }

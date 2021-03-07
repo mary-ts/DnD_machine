@@ -6,14 +6,14 @@ public class Races {
 	private String[] langs;
 	private boolean darkvision;
 	private int speed;
-	
+
 	public Races(String race, int[] ability, int speed, boolean darkvision, String size, String[] langs) {
 		this.race = race;
 		this.speed = speed;
 		this.darkvision = darkvision;
 		this.size = size;
 		this.langs = langs;
-		
+
 	}
 
 	public String getRace() {
@@ -64,5 +64,13 @@ public class Races {
 	public void setLangs(String[] langs) {
 		this.langs = langs;
 	}
+
+	public String toString() {
+		String out = "Race: " + race + "\nSize: " + size + "\nAbility: " + ability + "\nLanguages: " + langs + "\nSpeed: " + speed;
+		if(darkvision) out += "\nDarkvision";
+		return out;
+	}
+	
+	
 
 }
