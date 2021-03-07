@@ -1,26 +1,20 @@
 public class Classes {
 
-    private String type;
-    private int hitDice;
-    private String[] savingThrows;
-    private String[] proficiencies;
-    private String[] armorProf;
-    private String[] weaponProf;
-    private String[] equipment;
-    private String[] special;
-    private int numSells;
-    private int cantrips;
-    private int spellslots;
+    String type;
+    int hitDice;
+    String[] savingThrows;
+    String[] proficiencies;
+    String[] armorProf;
+    int numSells;
+    int cantrips;
+    int spellslots;
 
-    public Classes(String type, int hitDice, String[] savingThrows, String[] proficiencies, String[] armorProf, String[] weaponProf, String[] equipment, String[] special, int numSpells, int cantrips, int spellslots){
+    public Classes(String type, int hitDice, String[] savingThrows, String[] proficiencies, String[] armorProf, int numSpells, int cantrips, int spellslots){
         this.type = type;
         this.hitDice = hitDice;
         this.savingThrows = savingThrows;
         this.proficiencies = proficiencies;
         this.armorProf = armorProf;
-        this.weaponProf = weaponProf;
-        this.equipment = equipment;
-        this.special = special;
         this.numSells = numSpells;
         this.cantrips = cantrips;
         this.spellslots = spellslots;
@@ -64,30 +58,6 @@ public class Classes {
 
 	public void setArmorProf(String[] armorProf) {
 		this.armorProf = armorProf;
-	}
-
-	public String[] getWeaponProf() {
-		return weaponProf;
-	}
-
-	public void setWeaponProf(String[] weaponProf) {
-		this.weaponProf = weaponProf;
-	}
-
-	public String[] getEquipment() {
-		return equipment;
-	}
-
-	public void setEquipment(String[] equipment) {
-		this.equipment = equipment;
-	}
-
-	public String[] getSpecial() {
-		return special;
-	}
-
-	public void setSpecial(String[] special) {
-		this.special = special;
 	}
 
 	public int getNumSells() {
