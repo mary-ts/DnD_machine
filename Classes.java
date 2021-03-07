@@ -1,13 +1,13 @@
 public class Classes {
 
-    String type;
-    int hitDice;
-    String[] savingThrows;
-    String[] proficiencies;
-    String[] armorProf;
-    int numSells;
-    int cantrips;
-    int spellslots;
+	private String type;
+	private int hitDice;
+	private String[] savingThrows;
+	private String[] proficiencies;
+	private String[] armorProf;
+	private int numSells;
+	private int cantrips;
+	private int spellslots;
 
     public Classes(String type, int hitDice, String[] savingThrows, String[] proficiencies, String[] armorProf, int numSpells, int cantrips, int spellslots){
         this.type = type;
@@ -84,7 +84,4 @@ public class Classes {
 		this.spellslots = spellslots;
 	}
 
-
-
-    //Classes[] FUCKK??? = {Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer. Warlock, Wizard};
 }
