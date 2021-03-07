@@ -6,12 +6,42 @@ public class playerChar extends Character{
     String playRace;
     Classes playClass;
 
+    int prof = 2;
     int dex;
     int str;
     int con;
     int intel;
     int wis;
     int cha;
+
+    public playerChar(String name, String race, String Class){
+        this.playName = name;
+        this.playRace = race;
+
+
+        calcStats();
+
+    }
+
+    public playerChar(String name, String race, String Class, int d, int s, int c, int i, int w, int ch){
+        this.playName = name;
+        this.playRace = race;
+        this.dex = d;
+        this.str = s;
+        this.con = c;
+        this.intel = i;
+        this.wis = w;
+        this.cha = ch;
+
+    }
+
+    public int getProf() {
+        return prof;
+    }
+
+    public void setProf(int prof) {
+        this.prof = prof;
+    }
 
     public String getPlayName() {
         return playName;
@@ -89,16 +119,6 @@ public class playerChar extends Character{
 
     }
 
-    public playerChar(String name, String race, String Class){
-        this.playName = name;
-        this.playRace = race;
-        if(Class.equalsIgnoreCase("Barbarian"))
-            this.playClass = Classes.Barbarian;
-
-        calcStats();
-
-    }
-
     private void calcStats(){
         dex = sum3();
         str = sum3();
@@ -107,7 +127,5 @@ public class playerChar extends Character{
         wis = sum3();
         cha = sum3();
     }
-
-
 
 }
