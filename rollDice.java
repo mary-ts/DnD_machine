@@ -1,8 +1,4 @@
-public class diceRoll {
-
-	public diceRoll() {
-		
-	}
+public class rollDice {
 
 	public static int rollD4() {
 		return (int) (Math.random()*4 +1 );
@@ -39,4 +35,13 @@ public class diceRoll {
 	public static int rollD100() {
 		return (int) (Math.random()*100 +1 );
 	}	
+	
+	
+	public static int sum3D6() {
+		int[] allRolls = new int[] {rollD6(), rollD6(), rollD6(), rollD6()};
+ 		int min = Math.min(allRolls[0], Math.min(allRolls[1], Math.min(allRolls[2], allRolls[3])));
+		int sum = 0;
+		for(int i =0; i < allRolls.length; i++) sum += allRolls[i];
+		return sum - min;
+	}
 }
