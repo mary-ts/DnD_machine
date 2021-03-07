@@ -7,7 +7,6 @@ public class CLI {
     private String playName;
     private Races playRace;
     private Classes playClass;
-    private int profBonus;
     private int[] abilityScores;
 
     public CLI() {
