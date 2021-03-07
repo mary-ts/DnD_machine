@@ -68,14 +68,6 @@ public class playerChar extends Character{
 		this.playRace = playRace;
 	}
 
-	public int[] getGeneratedStats() {
-		return generatedStats;
-	}
-
-	public void setGeneratedStats(int[] generatedStats) {
-		this.generatedStats = generatedStats;
-	}
-
 	public int getProfBonus() {
 		return profBonus;
 	}
