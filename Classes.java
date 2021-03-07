@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Classes {
 
 	private String type;
@@ -21,8 +23,8 @@ public class Classes {
     }
     
 	public String toString() {
-		String out = "Classes: " + type + "\nHit Dice: d" + hitDice + "\nProficiencies\nSaving Throws: " + savingThrows + "\nSkill Proficiencies: "
-				+ proficiencies + "\nArmour: " + armorProf;
+		String out = "Classes: " + type + "\nHit Dice: d" + hitDice + "\nProficiencies\nSaving Throws: " + Arrays.toString(savingThrows) + "\nSkill Proficiencies: "
+				+ Arrays.toString(proficiencies) + "\nArmour: " + Arrays.toString(armorProf);
 		if(numSells > 0) out += "\nNumber of Spells" + numSells + "\nCantrips: " + cantrips
 			+ "\nSpellslots: " + spellslots;
 		return out;
