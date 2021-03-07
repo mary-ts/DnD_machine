@@ -2,15 +2,15 @@ import java.util.*;
 public class Character {
 	
 	private static String[] abilitiesArr = {"dex","str","con","int","wis","cha"};
-	private static int[] abilityScores = new int[6];
+	private int[] abilityScores = new int[6];
 	public static final ArrayList<String> abilities = new ArrayList<String>(Arrays.asList(abilitiesArr));
 	
-	public static int[] getAbilityScores() {
+	public int[] getAbilityScores() {
 		return abilityScores;
 	}
 
-	public static void setAbilityScores(int[] abilityScores) {
-		Character.abilityScores = abilityScores;
+	public void setAbilityScores(int[] abilityScores) {
+		this.abilityScores = abilityScores;
 	}
 
 	// PHB Races

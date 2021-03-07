@@ -75,7 +75,7 @@ public class playerChar extends Character{
 	}
 
 	public void genStats() {
-    	Character.setAbilityScores(new int[] {rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6()});
+    	setAbilityScores(new int[] {rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6()});
     }
     
     public void setSkillProf(String skill, boolean prof) {
