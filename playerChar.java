@@ -120,12 +120,16 @@ public class playerChar extends Character{
     }
 
     private void calcStats(){
-        dex = sum3();
-        str = sum3();
-        con = sum3();
-        intel = sum3();
-        wis = sum3();
-        cha = sum3();
+        ArrayList<Integer> stats = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            stats.add(sum3());
+        }
+//         dex = sum3();
+//         str = sum3();
+//         con = sum3();
+//         intel = sum3();
+//         wis = sum3();
+//         cha = sum3();
     }
 
 }
