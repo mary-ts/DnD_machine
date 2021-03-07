@@ -7,15 +7,7 @@ public class playerChar extends Character{
     private Races playRace;
     private Classes playClass;
     private int[] generatedStats;
-
     private int profBonus;
-    private int dex;
-    private int str;
-    private int con;
-    private int intel;
-    private int wis;
-    private int cha;
-    
     private ArrayList<String> skills;
     private boolean[] skillProfs;
 
@@ -92,54 +84,6 @@ public class playerChar extends Character{
 		this.profBonus = profBonus;
 	}
 
-	public int getDex() {
-		return dex;
-	}
-
-	public void setDex(int dex) {
-		this.dex = dex;
-	}
-
-	public int getStr() {
-		return str;
-	}
-
-	public void setStr(int str) {
-		this.str = str;
-	}
-
-	public int getCon() {
-		return con;
-	}
-
-	public void setCon(int con) {
-		this.con = con;
-	}
-
-	public int getIntel() {
-		return intel;
-	}
-
-	public void setIntel(int intel) {
-		this.intel = intel;
-	}
-
-	public int getWis() {
-		return wis;
-	}
-
-	public void setWis(int wis) {
-		this.wis = wis;
-	}
-
-	public int getCha() {
-		return cha;
-	}
-
-	public void setCha(int cha) {
-		this.cha = cha;
-	}
-
 	public void genStats() {
     	generatedStats = new int[] {rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6(),rollDice.sum3D6()};
 		System.out.println("Generated: ");
@@ -148,15 +92,6 @@ public class playerChar extends Character{
 		}
 		
     }
-
-    public void assignAllStats(int[] allStats){
-    	setDex(allStats[0]);
-    	setStr(allStats[1]);
-    	setCon(allStats[2]);
-    	setIntel(allStats[3]);
-    	setWis(allStats[4]);
-    	setCha(allStats[5]);
-    }
     
     public void setSkillProf(String skill, boolean prof) {
     	for(String s : skills) {
@@ -164,8 +99,8 @@ public class playerChar extends Character{
     	}
     }
     
-    public String toString() {
-    	String out = playName + "";
-    }
-    
+//    public String toString() {
+//    	String out = playName + "";
+//    }
+//    
 }

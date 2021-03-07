@@ -1,6 +1,19 @@
+import java.util.*;
 public class Character {
+	
+	private static String[] abilitiesArr = {"dex","str","con","int","wis","cha"};
+	private static int[] abilityScores = new int[6];
+	public static final ArrayList<String> abilities = new ArrayList<String>(Arrays.asList(abilitiesArr));
+	
+	public static int[] getAbilityScores() {
+		return abilityScores;
+	}
 
-    // PHB Races
+	public static void setAbilityScores(int[] abilityScores) {
+		Character.abilityScores = abilityScores;
+	}
+
+	// PHB Races
     static Races Human = new Races("Human", new int[] { 1, 1, 1, 1, 1, 1 }, 30, false, "medium",
             new String[] { "Common", "French" });
     static Races Elf = new Races("Elf", new int[] { 2, 0, 0, 0, 0, 0 }, 30, true, "medium",
@@ -73,4 +86,5 @@ public class Character {
             new String[]{"Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"},
             new String[]{"Light Armor"},
             4,3,2);
+
 }
