@@ -1,15 +1,14 @@
 public class Character {
 	
 	//PHB Races
-	Races Human = new Races("Human", 30, false, "medium", new String[] {"Common", "x"} );
-    Races Elf = new Races("Elf", 30, true, "medium", new String[] {"Common", "Elvish"});
-	Races HalfElf = new Races("Half-Elf", 30, true, "medium", new String[] {"Common", "Elvish", "x"});
-	Races HalfOrc = new Races("Half-Orc", 30, true, "medium", new String[] {"Common", "Orcish"});
-	Races Halfling = new Races("Halfling", 25, false, "small", new String[] {"Common", "Halfling"});
-	Races Gnome = new Races("Gnome", 25, true, "small", new String[] {"Common", "Gnomish"});
-	Races Dwarf = new Races ("Dwarf", 25, true, "medium", new String[] {"Common", "Dwarvish"});
-	Races Tiefling = new Races("Tiefling", 30, true, "medium", new String[] {"Common", "Infernal"});
-	
+        Races Human = new Races("Human", new int[] {1,1,1,1,1,1}, 30, false, "medium", new String[] {"Common", "x"} );
+	Races Elf = new Races("Elf", new int[] {2,0,0,0,0,0}, 30, true, "medium", new String[] {"Common", "Elvish"});
+	Races HalfElf = new Races("Half-Elf", new int[] {0,0,0,0,0,2}, 30, true, "medium", new String[] {"Common", "Elvish", "x"});
+	Races HalfOrc = new Races("Half-Orc",new int[] {0,2,1,0,0,0}, 30, true, "medium", new String[] {"Common", "Orcish"});
+	Races Halfling = new Races("Halfling",new int[] {2,0,0,0,0,0}, 25, false, "small", new String[] {"Common", "Halfling"});
+	Races Gnome = new Races("Gnome", new int[] {0,0,0,2,0,0}, 25, true, "small", new String[] {"Common", "Gnomish"});
+	Races Dwarf = new Races ("Dwarf", new int[] {0,0,2,0,0,0}, 25, true, "medium", new String[] {"Common", "Dwarvish"});
+	Races Tiefling = new Races("Tiefling",new int[] {0,0,0,1,0,2}, 30, true, "medium", new String[] {"Common", "Infernal"});
 	//PHB CLasses
 	
     Classes Barbarian = new Classes("Barbarian",
