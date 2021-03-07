@@ -27,8 +27,8 @@ public class diceRoll {
 	public static int rollD20() {
 		int x = (int) (Math.random()*20 +1 ) ;
 	    	
-		    if (x == 1) {
-	    		System.out.println("Natural 1!");
+		    if (x == 1) {  
+	    		System.out.println("Natural 1!");  // take these out if theyre annoying lol
 	    	} else if (x == 20) {
 	    		System.out.println("Natural 20!");
 	    	}
