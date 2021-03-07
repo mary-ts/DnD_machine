@@ -1,0 +1,11 @@
+public class diceRoll {
+
+	public diceRoll() {
+		
+	}
+
+	public static int rollD4() {
+		return (int) (Math.random()*4 +1 );
+	}
+	
+}
