@@ -23,30 +23,33 @@ public class playerChar extends Character{
 		this.playName = playName;
 		this.playRace = playRace;
 		this.playClass = playClass;
-		this.generatedStats = generatedStats;
+		genStats();
+		setAbilityScores(generatedStats);
 		this.profBonus = profBonus;
 		String allSkills[] = new String[] {"athletics","acrobatics","sleightOfHand","stealth","arcana","history","investigation", "nature",
 				"religion","animalHandling","insight","medicine","perception","survival","deception","intimidation","performance","persuasion"};
 		skills = new ArrayList<String>(Arrays.asList(allSkills));
 		skillProfs = new boolean[18];
+		calcAbilityScores();
 	}
 	
-	public playerChar(String playName, Races playRace, Classes playClass, int profBonus, int dex, int str, int con,
-			int intel, int wis, int cha) {
+	public playerChar(String playName, Races playRace, Classes playClass, int profBonus, int[] abilityScores) {
 		this.playName = playName;
 		this.playRace = playRace;
 		this.playClass = playClass;
 		this.profBonus = profBonus;
-		this.dex = dex;
-		this.str = str;
-		this.con = con;
-		this.intel = intel;
-		this.wis = wis;
-		this.cha = cha;
+		setAbilityScores(abilityScores);
 		String[] allSkills = new String[] {"athletics","acrobatics","sleightOfHand","stealth","arcana","history","investigation", "nature",
 				"religion","animalHandling","insight","medicine","perception","survival","deception","intimidation","performance","persuasion"};
 		skills = new ArrayList<String>(Arrays.asList(allSkills));
 		skillProfs = new boolean[18];
+		calcAbilityScores();
+	}
+	
+	public void calcAbilityScores() {
+		for(int i = 0; i < getAbilityScores().length; i++) {
+			getAbilityScores()[i] += playRace.getAbility()[i];
+		}
 	}
 
 	public Classes getPlayClass() {
@@ -147,7 +150,12 @@ public class playerChar extends Character{
     }
 
     public void assignAllStats(int[] allStats){
+    	setDex(allStats[0]);
     	setStr(allStats[1]);
+    	setCon(allStats[2]);
+    	setIntel(allStats[3]);
+    	setWis(allStats[4]);
+    	setCha(allStats[5]);
     }
     
     public void setSkillProf(String skill, boolean prof) {
@@ -156,5 +164,8 @@ public class playerChar extends Character{
     	}
     }
     
+    public String toString() {
+    	String out = playName + "";
+    }
     
 }
