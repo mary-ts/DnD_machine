@@ -6,7 +6,6 @@ public class Races {
 	private String[] langs;
 	private boolean darkvision;
 	private int speed;
-//	langs x;
 	
 	public Races(String race, int[] ability, int speed, boolean darkvision, String size, String[] langs) {
 		this.race = race;
@@ -66,16 +65,4 @@ public class Races {
 		this.langs = langs;
 	}
 
-		public static int[] setAbilityMods(String ability){
-        int[] arr = new int[6];   
-        switch(ability) {
-           case "Dexterity": arr[1] = 1; break;
-           case "Strength":arr[2] = 1; break;
-           case "Constitution":arr[3] = 1;break;
-           case "Intelligence": arr[4] = 1; break;
-           case "Wisdom":arr[5] = 1; break;
-           case "Charisma": arr[6] = 1; break;
-           }
-        return arr;
-    }
 }
